@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recharge</title>
+</head>
+<body>
+<!-- <form id="form" method="post">
+
+</form> -->
+<script>
+    
+        if(localStorage.getItem('callbackHTML')){
+            document.write(localStorage.getItem('callbackHTML'));
+            document.close();
+        }
+  
+   
+</script>
+
+<!-- <script>
+    let _search = window.location.search;
+    // console.log(_search,);
+    // getUrlParam(_search)
+    
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        let r = _search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    // 获取所有参数
+    let num = _search.indexOf('?');
+    let str = _search.substr(num + 1);
+    let arr = str.split('&');
+    // console.log(arr,'arr');
+    
+
+    let dict = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        let item = arr[i];
+        let ind = item.indexOf('=');
+        if (ind > 0) {
+            dict[item.split('=')[0]] = item.split('=')[1] || '';
+        }
+    }
+    // console.log(dict,'dict');
+
+    // 判读请求url是否存在
+    if (dict['search_url']) {
+        let url = dict['search_url'];
+        delete dict['search_url'];
+
+    //     $.ajax({
+    //         type: "POST",
+    //         url: url,
+    //         contentType:'application/json',
+    //         data:JSON.stringify(dict) ,
+    //         dataType: "JSON",
+    //         success: function(result) {
+    //             console.log(result);
+    //         }
+    //   });
+
+        // // 表单提交
+        let $form = document.getElementById('form');
+        $form.setAttribute('action', url);
+        $form.setAttribute('enctype', "application/json");
+
+        let _children = '';
+        for (let k in dict) {
+            _children += '<input name="'+ k +'" value="'+ dict[k] +'" hiddenn>';
+        }
+        _children += '<button type="submit" id="submit"></button>';
+        $form.innerHTML = _children;
+
+        document.getElementById('submit').click();
+    } else {
+        alert('参数缺失');
+    }
+  
+</script> -->
+</body>
+</html>
